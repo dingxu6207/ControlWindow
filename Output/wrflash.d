@@ -1,0 +1,13 @@
+..\..\output\wrflash.o: ..\..\User\DoFlash\WRFlash.c
+..\..\output\wrflash.o: ..\..\User\DoFlash\WRFlash.h
+..\..\output\wrflash.o: ..\..\Libraries\CMSIS\stm32f10x.h
+..\..\output\wrflash.o: ..\..\Libraries\CMSIS\core_cm3.h
+..\..\output\wrflash.o: d:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+..\..\output\wrflash.o: ..\..\Libraries\CMSIS\system_stm32f10x.h
+..\..\output\wrflash.o: ..\..\User\stm32f10x_conf.h
+..\..\output\wrflash.o: ..\..\Libraries\FWlib\inc\stm32f10x_flash.h
+..\..\output\wrflash.o: ..\..\Libraries\CMSIS\stm32f10x.h
+..\..\output\wrflash.o: ..\..\Libraries\FWlib\inc\stm32f10x_gpio.h
+..\..\output\wrflash.o: ..\..\Libraries\FWlib\inc\stm32f10x_rcc.h
+..\..\output\wrflash.o: ..\..\Libraries\FWlib\inc\stm32f10x_usart.h
+..\..\output\wrflash.o: ..\..\Libraries\FWlib\inc\misc.h

@@ -1,0 +1,7 @@
+---- stm32f10x_flash.h Matches (3 in 3 files) ----
+stm32f10x_conf.h (User)://#include "stm32f10x_flash.h"
+stm32f10x_flash.c (Libraries\FWlib\src):#include "stm32f10x_flash.h"
+stm32f10x_flash.h (Libraries\FWlib\inc):  * @file    stm32f10x_flash.h
+---- stm32f10x_flash.h Search Errors Encountered (1) ----
+The following 1 files could not be processed:
+E:\stm32_text\deqing\USART1½Ó·¢\Output\USART.build_log.htm : File could not be opened.
