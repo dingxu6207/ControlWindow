@@ -23,7 +23,7 @@ unsigned char WIFIUART_RxBuffer[WIFIUART_RX_BUFFER_SIZE];
    /* 配置USART为中断源 */
    NVIC_InitStructure.NVIC_IRQChannel = DEBUG_USART3_IRQ;
    /* 抢断优先级*/
-   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
    /* 子优先级 */
    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
    /* 使能中断 */

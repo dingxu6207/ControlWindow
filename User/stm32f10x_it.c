@@ -29,6 +29,7 @@
 #include "bsp_SysTick.h"
 #include <stdbool.h>
 #include "WifiUsart.h"
+#include "bsp_TiMbase.h" 
 
 extern void TimingDelay_Decrement(void);
 
@@ -216,5 +217,14 @@ void DEBUG_USART3_IRQHandler(void)
 			bRunMotor = true;
 		}
 	}	 
+}
+
+void  BASIC_TIM_IRQHandler (void)
+{
+	if ( TIM_GetITStatus( BASIC_TIM, TIM_IT_Update) != RESET )
+	{
+		TIM_ClearITPendingBit(BASIC_TIM , TIM_FLAG_Update); 
+	}
+
 }
 /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/

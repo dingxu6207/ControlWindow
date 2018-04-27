@@ -104,8 +104,9 @@ void ESP8266IO(void)
 {
 	 GPIO_InitTypeDef GPIO_InitStructure;
 	  
-	 RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE); 
-     GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable, ENABLE);
+	//若其他地方设置，此时不需要设置
+	 //RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE); 
+   //GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable, ENABLE);
 
      /*开启LED相关的GPIO外设时钟*/
 	 RCC_APB2PeriphClockCmd( Wirst_GPIO_CLK | Wien_GPIO_CLK, ENABLE);
@@ -128,7 +129,7 @@ void ESP8266IO(void)
 	/*调用库函数，初始化GPIO*/
 	GPIO_Init(Wien_GPIO_PORT, &GPIO_InitStructure);	
 
-  GPIO_SetBits(Wirst_GPIO_PORT, Wirst_GPIO_PIN);		
+ 	GPIO_SetBits(Wirst_GPIO_PORT, Wirst_GPIO_PIN);		
 	GPIO_SetBits(Wien_GPIO_PORT, Wien_GPIO_PIN);	
 }
 
