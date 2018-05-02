@@ -31,9 +31,7 @@ extern unsigned char WIFIUART_RxPtr;
 void WifiUSART_Config(void);
 void WifiUsart_SendByte( USART_TypeDef * pUSARTx, uint8_t ch);
 void WifiUsart_SendString( USART_TypeDef * pUSARTx, char *str);
+void WifiUsart_SendHalfWord( USART_TypeDef * pUSARTx, uint16_t ch);
 void Wifiuart_FlushRxBuffer(void);
-
-
-
 
 #endif

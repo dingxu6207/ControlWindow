@@ -33,6 +33,10 @@
 extern bool bFlagRun;
 extern bool bRunMotor;
 u16 uSetSpeed;
+extern u16 uCountStep;
+bool AcFlag = false;
+bool DeFlag = false;
+char TempCount[100];
 int main(void)
 {	
   /*初始化USART 配置模式为 115200 8-N-1，中断接收*/
@@ -74,6 +78,7 @@ int main(void)
 							
 						else if (CmdUART_RxBuffer[2] == 'Y')
 						{
+							SetSpeed(1000);
 							SetNameCode();
 							SetWifiConnect();	
 						}								
@@ -85,11 +90,13 @@ int main(void)
 
         if (bRunMotor == true)	
         {
+        
 			if (WIFIUART_RxBuffer[0] == ':')
 				if (WIFIUART_RxBuffer[1] == 'F')
 				{				
 					if (WIFIUART_RxBuffer[2] == '+')
-					{
+					{						
+						AcFlag = true;
 						ControlMotor(ENABLE);
 						GPIO_SetBits(DIR_GPIO_PORT, DIR_GPIO_PIN);
 						
@@ -97,9 +104,9 @@ int main(void)
 					
 					else if(WIFIUART_RxBuffer[2] == '-')
 					{
-					  ControlMotor(ENABLE);
-						/* DIR=0 */
-	          GPIO_ResetBits(DIR_GPIO_PORT, DIR_GPIO_PIN);
+					    DeFlag = true;
+					  	ControlMotor(ENABLE);
+	            		GPIO_ResetBits(DIR_GPIO_PORT, DIR_GPIO_PIN);
 					}
 
 					else if (WIFIUART_RxBuffer[2] == 'Q')
@@ -107,14 +114,44 @@ int main(void)
 						ControlMotor(DISABLE);
 					}
 
-         	else if (WIFIUART_RxBuffer[2] == 'V')
+         			else if (WIFIUART_RxBuffer[2] == 'V')
 					{
 						
 						uSetSpeed = atoi((char const *)WIFIUART_RxBuffer+3);
-						SetSpeed(uSetSpeed);
+						SetSpeed(uSetSpeed);						
 						
 					}
-					//WifiUsart_SendString(USART3, ":FV13#\n");
+
+					else if (WIFIUART_RxBuffer[2] == '?')
+					{
+						WifiUsart_SendString(USART3, ":FN1#");
+						sprintf(TempCount,"TempCount=%d\r\n",uCountStep);
+						WifiUsart_SendString(USART3, TempCount);
+					}
+
+					else if (WIFIUART_RxBuffer[2] == 'D')
+					{						
+						sprintf(TempCount,"TempCount=%d\r\n",uCountStep);
+						WifiUsart_SendString(USART3, TempCount);
+					}
+
+					else if (WIFIUART_RxBuffer[2] == 'O')
+					{
+						
+						AcFlag = true;
+						ControlMotor(ENABLE);
+						GPIO_SetBits(DIR_GPIO_PORT, DIR_GPIO_PIN);						
+					}
+					
+					else if(WIFIUART_RxBuffer[2] == 'C')
+					{
+					  
+					    DeFlag = true;
+					  	ControlMotor(ENABLE);
+						/* DIR=0 */
+	          			GPIO_ResetBits(DIR_GPIO_PORT, DIR_GPIO_PIN);
+					}
+										
 						
 				}
 			

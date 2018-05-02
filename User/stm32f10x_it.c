@@ -218,12 +218,41 @@ void DEBUG_USART3_IRQHandler(void)
 		}
 	}	 
 }
-
+extern bool AcFlag;
+extern bool DeFlag;
+u16 uCountStep = 10;
 void  BASIC_TIM_IRQHandler (void)
 {
 	if ( TIM_GetITStatus( BASIC_TIM, TIM_IT_Update) != RESET )
 	{
-		TIM_ClearITPendingBit(BASIC_TIM , TIM_FLAG_Update); 
+    #if 1  
+		if((AcFlag == true))
+           {
+              uCountStep++; 
+           }
+           else if((DeFlag == true))
+           {
+              uCountStep--;
+           }
+    if (uCountStep < 10)
+           {
+				AcFlag = false;
+				DeFlag = false;
+				uCountStep = 10;
+			    ControlMotor(DISABLE);
+							
+           }
+		if ((uCountStep > 5000))
+		{
+					AcFlag = false;
+				DeFlag = false;
+				uCountStep = 1000;
+			    ControlMotor(DISABLE);
+		}
+       
+    #endif
+					 
+			TIM_ClearITPendingBit(BASIC_TIM , TIM_FLAG_Update); 
 	}
 
 }
