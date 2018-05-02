@@ -230,7 +230,7 @@ void  BASIC_TIM_IRQHandler (void)
            {
               uCountStep++; 
            }
-           else if((DeFlag == true))
+    else if((DeFlag == true))
            {
               uCountStep--;
            }
@@ -242,11 +242,11 @@ void  BASIC_TIM_IRQHandler (void)
 			    ControlMotor(DISABLE);
 							
            }
-		if ((uCountStep > 5000))
+		else if ((uCountStep > 5000))
 		{
 					AcFlag = false;
 				DeFlag = false;
-				uCountStep = 1000;
+				uCountStep = 5000;
 			    ControlMotor(DISABLE);
 		}
        

@@ -125,8 +125,6 @@ int main(void)
 					else if (WIFIUART_RxBuffer[2] == '?')
 					{
 						WifiUsart_SendString(USART3, ":FN1#");
-						sprintf(TempCount,"TempCount=%d\r\n",uCountStep);
-						WifiUsart_SendString(USART3, TempCount);
 					}
 
 					else if (WIFIUART_RxBuffer[2] == 'D')
