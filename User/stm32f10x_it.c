@@ -218,6 +218,7 @@ void DEBUG_USART3_IRQHandler(void)
 		}
 	}	 
 }
+
 extern bool AcFlag;
 extern bool DeFlag;
 u16 uCountStep = 10;
@@ -225,35 +226,43 @@ void  BASIC_TIM_IRQHandler (void)
 {
 	if ( TIM_GetITStatus( BASIC_TIM, TIM_IT_Update) != RESET )
 	{
-    #if 1  
+    	#if 1  
 		if((AcFlag == true))
-           {
+        {
               uCountStep++; 
-           }
-    else if((DeFlag == true))
-           {
+        }
+    	else if((DeFlag == true))
+        {
               uCountStep--;
-           }
-    if (uCountStep < 10)
-           {
-				AcFlag = false;
-				DeFlag = false;
-				uCountStep = 10;
-			    ControlMotor(DISABLE);
+        }
+   		if (uCountStep < 10)
+        {
+			AcFlag = false;
+			DeFlag = false;
+			uCountStep = 10;
+			ControlMotor(DISABLE);
 							
-           }
+        }
 		else if ((uCountStep > 5000))
 		{
-					AcFlag = false;
-				DeFlag = false;
-				uCountStep = 5000;
-			    ControlMotor(DISABLE);
+			AcFlag = false;
+		    DeFlag = false;
+		    uCountStep = 5000;
+		    ControlMotor(DISABLE);
 		}
        
     #endif
 					 
-			TIM_ClearITPendingBit(BASIC_TIM , TIM_FLAG_Update); 
+		TIM_ClearITPendingBit(BASIC_TIM , TIM_FLAG_Update); 
 	}
 
+}
+
+void COVER_TIM_IRQHandler()
+{
+	if ( TIM_GetITStatus( TIM2, TIM_IT_Update) != RESET ) 
+	{
+		TIM_ClearITPendingBit(TIM2 , TIM_FLAG_Update);
+	}
 }
 /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/

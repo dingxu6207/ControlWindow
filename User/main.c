@@ -22,6 +22,7 @@
 #include "ESP8266.h"
 #include "WifiUsart.h"
 #include "bsp_TiMbase.h" 
+#include "bsp_TimeCover.h" 
 
 #include <stdbool.h>
 #include <stdlib.h>
@@ -45,10 +46,12 @@ int main(void)
   SysTick_Init(); 
 
   BASIC_TIM_Init();
+
+  Cover_TIM_Init();
 	
-	WifiUSART_Config();
+  WifiUSART_Config();
 	
-	ESP8266IO();
+  ESP8266IO();
 
   bFlagRun = true;
   sprintf((char*)CmdUART_RxBuffer, ":FY#");
@@ -98,6 +101,7 @@ int main(void)
 					{						
 						AcFlag = true;
 						ControlMotor(ENABLE);
+						ControlCover(ENABLE);
 						GPIO_SetBits(DIR_GPIO_PORT, DIR_GPIO_PIN);
 						
 					}
@@ -106,25 +110,28 @@ int main(void)
 					{
 					    DeFlag = true;
 					  	ControlMotor(ENABLE);
+					  	ControlCover(ENABLE);
 	            		GPIO_ResetBits(DIR_GPIO_PORT, DIR_GPIO_PIN);
 					}
 
 					else if (WIFIUART_RxBuffer[2] == 'Q')
 					{
 						ControlMotor(DISABLE);
+						ControlCover(DISABLE);
 					}
 
          			else if (WIFIUART_RxBuffer[2] == 'V')
 					{
 						
 						uSetSpeed = atoi((char const *)WIFIUART_RxBuffer+3);
-						SetSpeed(uSetSpeed);						
+						SetSpeed(uSetSpeed);
+						SetSpeedCover(uSetSpeed);
 						
 					}
 
 					else if (WIFIUART_RxBuffer[2] == '?')
 					{
-						WifiUsart_SendString(USART3, ":FN1#");
+						WifiUsart_SendString(USART3, ":FN2#");
 					}
 
 					else if (WIFIUART_RxBuffer[2] == 'D')
