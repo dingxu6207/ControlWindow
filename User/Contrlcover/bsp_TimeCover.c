@@ -25,13 +25,13 @@ static void ADVANCE_TIM_GPIO_Config(void)
 static void COVER_TIM_NVIC_Config(void)
 {
     NVIC_InitTypeDef NVIC_InitStructure; 
-    // 设置中断组为0
-    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_3);		
+    // 设置中断组为3
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);		
 		// 设置中断来源
     NVIC_InitStructure.NVIC_IRQChannel = COVER_TIM_IRQ ;	
-		// 设置主优先级为 0
-    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 2;	 
-	  // 设置抢占优先级为6
+		// 设置主优先级为 2
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;	 
+	  // 设置抢占优先级为0
     NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;	
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStructure);
@@ -64,7 +64,7 @@ static void COVER_TIM_Mode_Config(void)
 
 	/*--------------------输出比较结构体初始化-------------------*/	
 	// 配置为PWM模式1
-	TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;
+	TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM2;
 	// 输出使能
 	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;	
 	// 设置占空比大小

@@ -261,7 +261,7 @@ void  BASIC_TIM_IRQHandler (void)
 
 }
 u16 uCountStep1 = 10;
-void COVER_TIM_IRQHandler()
+void COVER_TIM_IRQHandler(void)
 {
 	if ( TIM_GetITStatus( TIM2, TIM_IT_Update) != RESET ) 
 	{
