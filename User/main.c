@@ -35,9 +35,11 @@ extern bool bFlagRun;
 extern bool bRunMotor;
 u16 uSetSpeed;
 extern u16 uCountStep;
+extern u16 uCountStep1;
 bool AcFlag = false;
 bool DeFlag = false;
 char TempCount[100];
+char TempCount1[100];
 int main(void)
 {	
   /*初始化USART 配置模式为 115200 8-N-1，中断接收*/
@@ -137,8 +139,10 @@ int main(void)
 
 					else if (WIFIUART_RxBuffer[2] == 'D')
 					{						
-						sprintf(TempCount,"TempCount=%d\r\n",uCountStep);
+						sprintf(TempCount,"TempCount=%d\r\n",uCountStep);//uCountStep1
+						sprintf(TempCount1,"TempCount1=%d\r\n",uCountStep1);
 						WifiUsart_SendString(USART3, TempCount);
+						WifiUsart_SendString(USART3, TempCount1);
 					}
 
 					else if (WIFIUART_RxBuffer[2] == 'O')

@@ -260,11 +260,12 @@ void  BASIC_TIM_IRQHandler (void)
 	}
 
 }
-
+u16 uCountStep1 = 10;
 void COVER_TIM_IRQHandler()
 {
 	if ( TIM_GetITStatus( TIM2, TIM_IT_Update) != RESET ) 
 	{
+		uCountStep1++;
 		TIM_ClearITPendingBit(TIM2 , TIM_FLAG_Update);
 	}
 }
