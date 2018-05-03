@@ -35,3 +35,4 @@
 ..\..\output\stm32f10x_it.o: d:\Keil_v5\ARM\ARMCC\bin\..\include\stdbool.h
 ..\..\output\stm32f10x_it.o: ..\..\User\uart3\WifiUsart.h
 ..\..\output\stm32f10x_it.o: ..\..\User\TimBase\bsp_TiMbase.h
+..\..\output\stm32f10x_it.o: ..\..\User\Contrlcover\bsp_TimeCover.h

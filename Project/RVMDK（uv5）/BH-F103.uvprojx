@@ -361,7 +361,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_MD, USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\User\usart;..\..\User\SysTick;..\..\User\DoFlash;..\..\User\esp8266;..\..\User\uart3;..\..\User\TimBase</IncludePath>
+              <IncludePath>..\..\Libraries\CMSIS;..\..\User;..\..\Libraries\FWlib\inc;..\..\User\usart;..\..\User\SysTick;..\..\User\DoFlash;..\..\User\esp8266;..\..\User\uart3;..\..\User\TimBase;..\..\User\Contrlcover</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -613,6 +613,11 @@
               <FileName>bsp_TiMbase.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\User\TimBase\bsp_TiMbase.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_TimeCover.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\Contrlcover\bsp_TimeCover.c</FilePath>
             </File>
           </Files>
         </Group>

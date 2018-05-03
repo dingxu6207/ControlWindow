@@ -82,6 +82,7 @@ int main(void)
 						else if (CmdUART_RxBuffer[2] == 'Y')
 						{
 							SetSpeed(1000);
+							SetSpeedCover(1000);
 							SetNameCode();
 							SetWifiConnect();	
 						}								
@@ -145,6 +146,7 @@ int main(void)
 						
 						AcFlag = true;
 						ControlMotor(ENABLE);
+						ControlCover(ENABLE);
 						GPIO_SetBits(DIR_GPIO_PORT, DIR_GPIO_PIN);						
 					}
 					
@@ -153,6 +155,7 @@ int main(void)
 					  
 					    DeFlag = true;
 					  	ControlMotor(ENABLE);
+					  	ControlCover(ENABLE);
 						/* DIR=0 */
 	          			GPIO_ResetBits(DIR_GPIO_PORT, DIR_GPIO_PIN);
 					}

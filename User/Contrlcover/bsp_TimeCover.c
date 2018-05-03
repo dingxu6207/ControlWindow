@@ -1,5 +1,6 @@
 #include "bsp_TimeCover.h" 
 #include "bsp_usart.h"
+ 
 
 
 static void ADVANCE_TIM_GPIO_Config(void)
@@ -25,11 +26,11 @@ static void COVER_TIM_NVIC_Config(void)
 {
     NVIC_InitTypeDef NVIC_InitStructure; 
     // 设置中断组为0
-    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);		
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_3);		
 		// 设置中断来源
     NVIC_InitStructure.NVIC_IRQChannel = COVER_TIM_IRQ ;	
 		// 设置主优先级为 0
-    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;	 
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 2;	 
 	  // 设置抢占优先级为6
     NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;	
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
@@ -62,8 +63,8 @@ static void COVER_TIM_Mode_Config(void)
 
 
 	/*--------------------输出比较结构体初始化-------------------*/	
-	// 配置为PWM模式2
-	TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM2;
+	// 配置为PWM模式1
+	TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;
 	// 输出使能
 	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;	
 	// 设置占空比大小
@@ -84,16 +85,14 @@ static void COVER_TIM_Mode_Config(void)
     TIM_UpdateRequestConfig(TIM2, TIM_UpdateSource_Regular);
 		
 	// 清除计数器中断标志位
-    TIM_ClearFlag(COVER_TIM, TIM_FLAG_Update);
+    TIM_ClearFlag(TIM2, TIM_FLAG_Update);
 	  
 	// 开启计数器中断
-    TIM_ITConfig(COVER_TIM,TIM_IT_Update,ENABLE);
+    TIM_ITConfig(TIM2, TIM_IT_Update,ENABLE);
 		
 	// 使能计数器
-    TIM_Cmd(COVER_TIM, DISABLE);	
+    TIM_Cmd(TIM2, DISABLE);	
     TIM_CtrlPWMOutputs(TIM2, DISABLE);
-	//	TIM_Cmd(COVER_TIM, ENABLE);
-	//  TIM_CtrlPWMOutputs(TIM2, ENABLE);
 }
 	
 void Cover_TIM_Init(void)
@@ -109,14 +108,14 @@ void ControlCover(FunctionalState NewState)
 	if (NewState == DISABLE)
 	{
 		//使能定时器	
-		TIM_Cmd(COVER_TIM, DISABLE);
+		TIM_Cmd(TIM2, DISABLE);
 		TIM_CtrlPWMOutputs(TIM2, DISABLE);
 		//printf("TIM is disable!\n");
 	}
 	else
 	{
 		//使能定时器	
-		TIM_Cmd(COVER_TIM, ENABLE);
+		TIM_Cmd(TIM2, ENABLE);
 		TIM_CtrlPWMOutputs(TIM2, ENABLE);
 		//printf("TIM is able!\n");
 	}

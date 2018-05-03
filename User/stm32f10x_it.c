@@ -30,6 +30,7 @@
 #include <stdbool.h>
 #include "WifiUsart.h"
 #include "bsp_TiMbase.h" 
+#include "bsp_TimeCover.h"
 
 extern void TimingDelay_Decrement(void);
 
@@ -241,6 +242,7 @@ void  BASIC_TIM_IRQHandler (void)
 			DeFlag = false;
 			uCountStep = 10;
 			ControlMotor(DISABLE);
+			ControlCover(DISABLE);
 							
         }
 		else if ((uCountStep > 5000))
@@ -249,6 +251,7 @@ void  BASIC_TIM_IRQHandler (void)
 		    DeFlag = false;
 		    uCountStep = 5000;
 		    ControlMotor(DISABLE);
+			  ControlCover(DISABLE);
 		}
        
     #endif
