@@ -30,10 +30,10 @@ static void CONTROL_DRV8825_GPIO_Config(void)
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);
   GPIO_PinRemapConfig(GPIO_Remap_SWJ_Disable , ENABLE);
  
-	RCC_APB2PeriphClockCmd(EN_GPIO_CLK | M0_GPIO_CLK | M1_GPIO_CLK | M2_GPIO_CLK, ENABLE);
-	RCC_APB2PeriphClockCmd( RST_GPIO_CLK , ENABLE);
+	RCC_APB2PeriphClockCmd(EN_GPIO_CLK | M0_GPIO_CLK | M1_GPIO_CLK | M2_GPIO_CLK, ENABLE);	
 	RCC_APB2PeriphClockCmd( DIR_GPIO_CLK , ENABLE);
-	RCC_APB2PeriphClockCmd( SLF_GPIO_CLK , ENABLE);
+	//RCC_APB2PeriphClockCmd( RST_GPIO_CLK , ENABLE);
+	//RCC_APB2PeriphClockCmd( SLF_GPIO_CLK , ENABLE);
 
     /*选择要控制的EN引脚*/
 	GPIO_InitStructure.GPIO_Pin = EN_GPIO_PIN;	
@@ -59,6 +59,7 @@ static void CONTROL_DRV8825_GPIO_Config(void)
 	/*调用库函数，初始化GPIOF*/
 	GPIO_Init(M2_GPIO_PORT, &GPIO_InitStructure);
 
+    #if 0
 	/*选择要控制的RST引脚*/
 	GPIO_InitStructure.GPIO_Pin = RST_GPIO_PIN;
 	/*调用库函数，初始化GPIOF*/
@@ -68,6 +69,7 @@ static void CONTROL_DRV8825_GPIO_Config(void)
 	GPIO_InitStructure.GPIO_Pin = SLF_GPIO_PIN;
 	/*调用库函数，初始化GPIO*/
 	GPIO_Init(SLF_GPIO_PORT, &GPIO_InitStructure);
+	#endif
 
 	/*选择要控制的DIR引脚*/
 	GPIO_InitStructure.GPIO_Pin = DIR_GPIO_PIN;
@@ -82,12 +84,17 @@ static void CONTROL_DRV8825_GPIO_Config(void)
 	GPIO_ResetBits(M1_GPIO_PORT, M1_GPIO_PIN);
 	/* M2=0 */
 	GPIO_ResetBits(M2_GPIO_PORT, M2_GPIO_PIN);
+
+	/* DIR=1 */
+	GPIO_SetBits(DIR_GPIO_PORT, DIR_GPIO_PIN);
+
+	#if 0
 	/* SLF=1 */
 	GPIO_SetBits(SLF_GPIO_PORT, SLF_GPIO_PIN);
 	/* RST=1 */
 	GPIO_SetBits(RST_GPIO_PORT, RST_GPIO_PIN);	
-	/* DIR=1 */
-	GPIO_SetBits(DIR_GPIO_PORT, DIR_GPIO_PIN);
+	#endif
+	
 }
 	
 

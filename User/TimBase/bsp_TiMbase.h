@@ -25,38 +25,27 @@ void SetSpeed(u16 uSetSpeed);
 //M0信号 
 #define M0_GPIO_PORT        GPIOA
 #define M0_GPIO_CLK         RCC_APB2Periph_GPIOA
-#define M0_GPIO_PIN         GPIO_Pin_5
+#define M0_GPIO_PIN         GPIO_Pin_12
 
 //M1信号 
 #define M1_GPIO_PORT        GPIOA
 #define M1_GPIO_CLK         RCC_APB2Periph_GPIOA
-#define M1_GPIO_PIN         GPIO_Pin_6
+#define M1_GPIO_PIN         GPIO_Pin_13
 
 //M2信号 
 #define M2_GPIO_PORT        GPIOA
 #define M2_GPIO_CLK         RCC_APB2Periph_GPIOA
-#define M2_GPIO_PIN         GPIO_Pin_11
-
-
-//SLF信号 
-#define SLF_GPIO_PORT        GPIOA
-#define SLF_GPIO_CLK         RCC_APB2Periph_GPIOA
-#define SLF_GPIO_PIN         GPIO_Pin_13
-
-//RST信号 
-#define RST_GPIO_PORT        GPIOA
-#define RST_GPIO_CLK         RCC_APB2Periph_GPIOA
-#define RST_GPIO_PIN         GPIO_Pin_14
+#define M2_GPIO_PIN         GPIO_Pin_14
 
 //DRV8825使能信号
 #define EN_GPIO_PORT   	    GPIOA			              /* GPIO端口 */
 #define EN_GPIO_CLK 	    RCC_APB2Periph_GPIOA		/* GPIO端口时钟 */
-#define EN_GPIO_PIN		    GPIO_Pin_4		        /* 连接到SCL时钟线的GPIO */
+#define EN_GPIO_PIN		    GPIO_Pin_11		        /* 连接到SCL时钟线的GPIO */
 
 // DRV8825 DIR方向信号
 #define DIR_GPIO_PORT    	GPIOA/* GPIO端口 */
 #define DIR_GPIO_CLK 	    RCC_APB2Periph_GPIOA		/* GPIO端口时钟 */
-#define DIR_GPIO_PIN		GPIO_Pin_7  
+#define DIR_GPIO_PIN		GPIO_Pin_15 
 
 #endif	/* __BSP_TIMEBASE_H */
 

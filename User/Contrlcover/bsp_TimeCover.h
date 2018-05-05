@@ -24,4 +24,30 @@ void SetSpeedCoverMoter(u16 SpeedMoter);
 void SetSpeedCover(u16 uSetSpeed);
 //void Timer2_Configuration(void);
 
+
+
+//M0信号 
+#define DrM0_GPIO_PORT        GPIOB
+#define DrM0_GPIO_CLK         RCC_APB2Periph_GPIOB
+#define DrM0_GPIO_PIN         GPIO_Pin_12
+
+//M1信号 
+#define DrM1_GPIO_PORT        GPIOB
+#define DrM1_GPIO_CLK         RCC_APB2Periph_GPIOB
+#define DrM1_GPIO_PIN         GPIO_Pin_13
+
+//M2信号 
+#define DrM2_GPIO_PORT        GPIOB
+#define DrM2_GPIO_CLK         RCC_APB2Periph_GPIOB
+#define DrM2_GPIO_PIN         GPIO_Pin_14
+
+//DRV8825使能信号
+#define DrEN_GPIO_PORT   	    GPIOC			              /* GPIO端口 */
+#define DrEN_GPIO_CLK 	    RCC_APB2Periph_GPIOC		/* GPIO端口时钟 */
+#define DrEN_GPIO_PIN		    GPIO_Pin_13		        /* 连接到SCL时钟线的GPIO */
+
+// DRV8825 DIR方向信号
+#define DrDIR_GPIO_PORT    	GPIOB/* GPIO端口 */
+#define DrDIR_GPIO_CLK 	    RCC_APB2Periph_GPIOB		/* GPIO端口时钟 */
+#define DrDIR_GPIO_PIN		GPIO_Pin_15 
 #endif	/* __BSP_TIMEBASE_H */

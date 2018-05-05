@@ -1,6 +1,60 @@
 #include "bsp_TimeCover.h" 
 #include "bsp_usart.h"
  
+static void CONTROL2_DRV8825_GPIO_Config(void)
+{
+	/*定义一个GPIO_InitTypeDef类型的结构体*/
+	GPIO_InitTypeDef GPIO_InitStructure;
+	 
+	RCC_APB2PeriphClockCmd(DrEN_GPIO_CLK | DrM0_GPIO_CLK | DrM1_GPIO_CLK | DrM2_GPIO_CLK, ENABLE);	
+	RCC_APB2PeriphClockCmd(DrDIR_GPIO_CLK , ENABLE);
+
+
+    /*选择要控制的EN引脚*/
+	GPIO_InitStructure.GPIO_Pin = DrEN_GPIO_PIN;	
+	/*设置引脚模式为通用推挽输出*/
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;   
+	/*设置引脚速率为50MHz */   
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; 
+	/*调用库函数，初始化GPIO*/
+	GPIO_Init(DrEN_GPIO_PORT, &GPIO_InitStructure);
+
+	/*选择要控制的M0引脚*/
+	GPIO_InitStructure.GPIO_Pin = DrM0_GPIO_PIN;
+	/*调用库函数，初始化GPIOF*/
+	GPIO_Init(DrM0_GPIO_PORT, &GPIO_InitStructure);
+
+	/*选择要控制的M1引脚*/
+	GPIO_InitStructure.GPIO_Pin = DrM1_GPIO_PIN;
+	/*调用库函数，初始化GPIOF*/
+	GPIO_Init(DrM1_GPIO_PORT, &GPIO_InitStructure);
+
+	/*选择要控制的M2引脚*/
+	GPIO_InitStructure.GPIO_Pin = DrM2_GPIO_PIN;
+	/*调用库函数，初始化GPIOF*/
+	GPIO_Init(DrM2_GPIO_PORT, &GPIO_InitStructure);
+
+
+
+	/*选择要控制的DIR引脚*/
+	GPIO_InitStructure.GPIO_Pin = DrDIR_GPIO_PIN;
+	/*调用库函数，初始化GPIOF*/
+	GPIO_Init(DrDIR_GPIO_PORT, &GPIO_InitStructure);
+	
+	/* EN */
+	GPIO_SetBits(DrEN_GPIO_PORT, DrEN_GPIO_PIN);		
+  /* M0=0 */
+	GPIO_ResetBits(DrM0_GPIO_PORT, DrM0_GPIO_PIN);	   
+	/* M1=0 */
+	GPIO_ResetBits(DrM1_GPIO_PORT, DrM1_GPIO_PIN);
+	/* M2=0 */
+	GPIO_ResetBits(DrM2_GPIO_PORT, DrM2_GPIO_PIN);
+
+	/* DIR=1 */
+	GPIO_SetBits(DrDIR_GPIO_PORT, DrDIR_GPIO_PIN);
+
+}
+
 
 
 static void ADVANCE_TIM_GPIO_Config(void)
@@ -97,6 +151,7 @@ static void COVER_TIM_Mode_Config(void)
 	
 void Cover_TIM_Init(void)
 {
+	CONTROL2_DRV8825_GPIO_Config();
 	ADVANCE_TIM_GPIO_Config();	
 	COVER_TIM_Mode_Config();
 	COVER_TIM_NVIC_Config();
