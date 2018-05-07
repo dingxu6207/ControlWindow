@@ -87,7 +87,44 @@ int main(void)
 							SetSpeedCover(1000);
 							SetNameCode();
 							SetWifiConnect();	
-						}								
+						}
+						else if (CmdUART_RxBuffer[2] == '+')
+						{
+							DeFlag = true;
+					  		ControlMotor(ENABLE);
+					  		ControlCover(ENABLE);
+							GPIO_SetBits(DIR_GPIO_PORT, DIR_GPIO_PIN);
+						    GPIO_SetBits(DrDIR_GPIO_PORT, DrDIR_GPIO_PIN);
+							GPIO_SetBits(LED0_GPIO_PORT, LED0_GPIO_PIN);
+					  		
+						}
+						
+						else if(CmdUART_RxBuffer[2] == '-')
+						{
+							DeFlag = true;
+							ControlMotor(ENABLE);
+							ControlCover(ENABLE);
+	            			GPIO_ResetBits(DIR_GPIO_PORT, DIR_GPIO_PIN);
+	            			GPIO_ResetBits(DrDIR_GPIO_PORT, DrDIR_GPIO_PIN);
+							GPIO_ResetBits(LED0_GPIO_PORT, LED0_GPIO_PIN);
+						}
+
+						else if (CmdUART_RxBuffer[2] == 'Q')
+						{
+							ControlMotor(DISABLE);
+							ControlCover(DISABLE);
+					  		GPIO_SetBits(LED0_GPIO_PORT, LED0_GPIO_PIN);
+
+						}
+
+						else if (CmdUART_RxBuffer[2] == 'V')
+						{
+						
+							uSetSpeed = atoi((char const *)CmdUART_RxBuffer+3);	
+							SetSpeed(uSetSpeed);
+							SetSpeedCover(uSetSpeed);
+						
+						}
 				  	}	
 				  	
 			bFlagRun = false;

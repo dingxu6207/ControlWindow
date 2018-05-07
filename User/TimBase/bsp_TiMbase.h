@@ -47,5 +47,10 @@ void SetSpeed(u16 uSetSpeed);
 #define DIR_GPIO_CLK 	    RCC_APB2Periph_GPIOA		/* GPIO端口时钟 */
 #define DIR_GPIO_PIN		GPIO_Pin_15 
 
+// LED0
+#define LED0_GPIO_PORT    	GPIOA/* GPIO端口 */
+#define LED0_GPIO_CLK 	    RCC_APB2Periph_GPIOA		/* GPIO端口时钟 */
+#define LED0_GPIO_PIN		GPIO_Pin_1 
+
 #endif	/* __BSP_TIMEBASE_H */
 

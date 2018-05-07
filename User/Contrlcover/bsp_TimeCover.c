@@ -165,6 +165,8 @@ void ControlCover(FunctionalState NewState)
 		//使能定时器	
 		TIM_Cmd(TIM2, DISABLE);
 		TIM_CtrlPWMOutputs(TIM2, DISABLE);
+		/* EN */
+		GPIO_SetBits(DrEN_GPIO_PORT, DrEN_GPIO_PIN);
 		//printf("TIM is disable!\n");
 	}
 	else
@@ -172,6 +174,8 @@ void ControlCover(FunctionalState NewState)
 		//使能定时器	
 		TIM_Cmd(TIM2, ENABLE);
 		TIM_CtrlPWMOutputs(TIM2, ENABLE);
+		/* EN */
+	   GPIO_ResetBits(DrEN_GPIO_PORT, DrEN_GPIO_PIN);
 		//printf("TIM is able!\n");
 	}
 }
