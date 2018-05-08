@@ -90,7 +90,8 @@ int main(void)
 						}
 						else if (CmdUART_RxBuffer[2] == '+')
 						{
-							DeFlag = true;
+							
+							AcFlag = true;
 					  		ControlMotor(ENABLE);
 					  		ControlCover(ENABLE);
 							GPIO_SetBits(DIR_GPIO_PORT, DIR_GPIO_PIN);

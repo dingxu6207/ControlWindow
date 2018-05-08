@@ -227,7 +227,7 @@ void  BASIC_TIM_IRQHandler (void)
 {
 	if ( TIM_GetITStatus( BASIC_TIM, TIM_IT_Update) != RESET )
 	{
-    	#if 0
+    	#if 1
 		if((AcFlag == true))
         {
               uCountStep++; 
