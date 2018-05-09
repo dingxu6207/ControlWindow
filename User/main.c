@@ -84,7 +84,7 @@ int main(void)
 						else if (CmdUART_RxBuffer[2] == 'Y')
 						{
 							SetSpeed(1000);
-							SetSpeedCover(1000);
+							SetSpeedCover(100);
 							SetNameCode();
 							SetWifiConnect();	
 						}
@@ -144,7 +144,7 @@ int main(void)
 						ControlMotor(ENABLE);
 						ControlCover(ENABLE);
 						GPIO_SetBits(DIR_GPIO_PORT, DIR_GPIO_PIN);
-						GPIO_SetBits(DrDIR_GPIO_PORT, DrDIR_GPIO_PIN);
+						GPIO_ResetBits(DrDIR_GPIO_PORT, DrDIR_GPIO_PIN);
 						
 					}
 					
@@ -154,7 +154,7 @@ int main(void)
 					  	ControlMotor(ENABLE);
 					  	ControlCover(ENABLE);
 	            		GPIO_ResetBits(DIR_GPIO_PORT, DIR_GPIO_PIN);
-	            		GPIO_ResetBits(DrDIR_GPIO_PORT, DrDIR_GPIO_PIN);
+	            		GPIO_SetBits(DrDIR_GPIO_PORT, DrDIR_GPIO_PIN);
 					}
 
 					else if (WIFIUART_RxBuffer[2] == 'Q')
