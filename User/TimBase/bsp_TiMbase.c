@@ -80,9 +80,9 @@ static void CONTROL_DRV8825_GPIO_Config(void)
 	/* EN */
 	GPIO_SetBits(EN_GPIO_PORT, EN_GPIO_PIN);		
   /* M0=0 */
-	GPIO_ResetBits(M0_GPIO_PORT, M0_GPIO_PIN);	   
+	GPIO_SetBits(M0_GPIO_PORT, M0_GPIO_PIN);	   
 	/* M1=0 */
-	GPIO_ResetBits(M1_GPIO_PORT, M1_GPIO_PIN);
+	GPIO_SetBits(M1_GPIO_PORT, M1_GPIO_PIN);
 	/* M2=0 */
 	GPIO_ResetBits(M2_GPIO_PORT, M2_GPIO_PIN);
 

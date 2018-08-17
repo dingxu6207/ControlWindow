@@ -222,7 +222,7 @@ void DEBUG_USART3_IRQHandler(void)
 
 extern bool AcFlag;
 extern bool DeFlag;
-u16 uCountStep = 10;
+u32 uCountStep = 10;
 void  BASIC_TIM_IRQHandler (void)
 {
 	if ( TIM_GetITStatus( BASIC_TIM, TIM_IT_Update) != RESET )
@@ -245,11 +245,11 @@ void  BASIC_TIM_IRQHandler (void)
 			ControlCover(DISABLE);
 							
         }
-		else if ((uCountStep > 5000))
+		else if ((uCountStep > 648*2*2))
 		{
 			AcFlag = false;
 		    DeFlag = false;
-		    uCountStep = 5000;
+		    uCountStep = 648*2*2;
 		    ControlMotor(DISABLE);
 			  ControlCover(DISABLE);
 		}

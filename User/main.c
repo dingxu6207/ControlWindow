@@ -84,7 +84,7 @@ int main(void)
 						else if (CmdUART_RxBuffer[2] == 'Y')
 						{
 							SetSpeed(1000);
-							SetSpeedCover(100);
+							SetSpeedCover(1000);
 							SetNameCode();
 							SetWifiConnect();	
 						}
