@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\..\Output\USART.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\..\Output\USART.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5040049: Last Updated: Fri Aug 17 15:28:18 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5040049: Last Updated: Thu Sep 06 14:23:37 2018
 <BR><P>
 <H3>Maximum Stack Usage =         92 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1218,10 +1218,21 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetWifiConnect
 </UL>
 
-<P><STRONG><a name="[84]"></a>SetWifiConnect</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, esp8266.o(.text))
+<P><STRONG><a name="[ae]"></a>ESP8266_Rst</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, esp8266.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ESP8266_Rst &rArr; Delay_us
+</UL>
+<BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
+<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_us
+</UL>
+<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetWifiConnect
+</UL>
+
+<P><STRONG><a name="[84]"></a>SetWifiConnect</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, esp8266.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = SetWifiConnect &rArr; CmdString &rArr; ESP8266_Set &rArr; WifiUsart_SendByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CmdString
+<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ESP8266_Rst
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CmdString
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wifiuart_FlushRxBuffer
 </UL>
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -1235,12 +1246,6 @@ Global Symbols
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[ae]"></a>ESP8266_Rst</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, esp8266.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_us
 </UL>
 
 <P><STRONG><a name="[7b]"></a>WifiUSART_Config</STRONG> (Thumb, 136 bytes, Stack size 24 bytes, wifiusart..o(.text))
