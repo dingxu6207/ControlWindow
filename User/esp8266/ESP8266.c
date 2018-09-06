@@ -73,9 +73,9 @@ void SetNameCode(void)
 void SetWifiConnect(void)
 { 
 
-	   //ESP8266_Rst();
-		 CmdString("AT"); //测试
-		 CmdString("AT+RST"); //测试
+	   ESP8266_Rst();
+		CmdString("AT"); //测试
+		CmdString("AT+RST"); //测试
 		
 		 CmdString("AT+CWMODE_DEF=1");     //设置路由器模式 1 station模式 2 AP	
 		 //CmdString("AT+CWJAP=\"A304\",\"wildfire\"");
@@ -97,6 +97,7 @@ void CmdString(unsigned char *ptr)
 			ESP8266_Set(ptr);
 			if (strstr((char*)WIFIUART_RxBuffer, "OK"))
 				break;
+
 	}
 }
 
