@@ -44,9 +44,9 @@ static void CONTROL2_DRV8825_GPIO_Config(void)
 	/* EN */
 	GPIO_SetBits(DrEN_GPIO_PORT, DrEN_GPIO_PIN);		
   /* M0=0 */
-	GPIO_SetBits(DrM0_GPIO_PORT, DrM0_GPIO_PIN);	   
+	GPIO_ResetBits(DrM0_GPIO_PORT, DrM0_GPIO_PIN);	   
 	/* M1=0 */
-	GPIO_SetBits(DrM1_GPIO_PORT, DrM1_GPIO_PIN);
+	GPIO_ResetBits(DrM1_GPIO_PORT, DrM1_GPIO_PIN);
 	/* M2=0 */
 	GPIO_ResetBits(DrM2_GPIO_PORT, DrM2_GPIO_PIN);
 

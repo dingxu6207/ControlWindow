@@ -34,6 +34,7 @@ Section Cross References
     main.o(.text) refers to printf3.o(i.__0sprintf$3) for __2sprintf
     main.o(.text) refers to stm32f10x_gpio.o(.text) for GPIO_SetBits
     main.o(.text) refers to atoi.o(.text) for atoi
+    main.o(.text) refers to printf3.o(i.__0printf$3) for __2printf
     main.o(.text) refers to stm32f10x_it.o(.data) for bFlagRun
     main.o(.text) refers to bsp_usart.o(.bss) for CmdUART_RxBuffer
     main.o(.text) refers to bsp_usart.o(.data) for CmdUART_RxPtr
@@ -536,65 +537,65 @@ Image Symbol Table
     TI1_Config                               0x08001743   Thumb Code   108  stm32f10x_tim.o(.text)
     .text                                    0x08001efc   Section        0  stm32f10x_usart.o(.text)
     .text                                    0x08002304   Section        0  main.o(.text)
-    .text                                    0x0800263c   Section        0  stm32f10x_it.o(.text)
-    .text                                    0x080027e8   Section        0  bsp_usart.o(.text)
-    NVIC_Configuration                       0x080027e9   Thumb Code    40  bsp_usart.o(.text)
-    .text                                    0x080029a8   Section        0  bsp_systick.o(.text)
-    SysTick_Config                           0x080029a9   Thumb Code    76  bsp_systick.o(.text)
-    .text                                    0x08002adc   Section        0  wrflash.o(.text)
-    .text                                    0x08002b60   Section        0  esp8266.o(.text)
-    .text                                    0x08002df4   Section        0  wifiusart..o(.text)
-    NVIC_Configuration                       0x08002df5   Thumb Code    40  wifiusart..o(.text)
-    .text                                    0x08002f48   Section        0  bsp_timbase.o(.text)
-    ADVANCE_TIM_GPIO_Config                  0x08002f49   Thumb Code    40  bsp_timbase.o(.text)
-    CONTROL_DRV8825_GPIO_Config              0x08002f71   Thumb Code   208  bsp_timbase.o(.text)
-    BASIC_TIM_NVIC_Config                    0x08003041   Thumb Code    42  bsp_timbase.o(.text)
-    BASIC_TIM_Mode_Config                    0x0800306b   Thumb Code   158  bsp_timbase.o(.text)
-    .text                                    0x08003194   Section        0  bsp_timecover.o(.text)
-    CONTROL2_DRV8825_GPIO_Config             0x08003195   Thumb Code   162  bsp_timecover.o(.text)
-    ADVANCE_TIM_GPIO_Config                  0x08003237   Thumb Code    38  bsp_timecover.o(.text)
-    COVER_TIM_NVIC_Config                    0x0800325d   Thumb Code    42  bsp_timecover.o(.text)
-    COVER_TIM_Mode_Config                    0x08003287   Thumb Code   156  bsp_timecover.o(.text)
-    .text                                    0x080033c4   Section        0  strstr.o(.text)
-    .text                                    0x080033e8   Section        0  atoi.o(.text)
-    .text                                    0x08003402   Section        0  uidiv.o(.text)
-    .text                                    0x0800342e   Section        0  strtol.o(.text)
-    .text                                    0x080034a0   Section       36  init.o(.text)
-    .text                                    0x080034c4   Section        0  ctype_o.o(.text)
-    .text                                    0x080034cc   Section        0  _strtoul.o(.text)
-    .text                                    0x0800356a   Section        0  _chval.o(.text)
-    i.__0printf$3                            0x08003588   Section        0  printf3.o(i.__0printf$3)
-    i.__0sprintf$3                           0x080035a8   Section        0  printf3.o(i.__0sprintf$3)
-    i.__aeabi_errno_addr                     0x080035d0   Section        0  errno.o(i.__aeabi_errno_addr)
-    i.__scatterload_copy                     0x080035d8   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x080035e6   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x080035e8   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i._printf_core                           0x080035f8   Section        0  printf3.o(i._printf_core)
-    _printf_core                             0x080035f9   Thumb Code   436  printf3.o(i._printf_core)
-    i._sputc                                 0x080037b0   Section        0  printf3.o(i._sputc)
-    _sputc                                   0x080037b1   Thumb Code    10  printf3.o(i._sputc)
-    .constdata                               0x080037ba   Section      129  ctype_o.o(.constdata)
-    .constdata                               0x0800383c   Section        4  ctype_o.o(.constdata)
-    table                                    0x0800383c   Data           4  ctype_o.o(.constdata)
+    .text                                    0x08002690   Section        0  stm32f10x_it.o(.text)
+    .text                                    0x08002850   Section        0  bsp_usart.o(.text)
+    NVIC_Configuration                       0x08002851   Thumb Code    40  bsp_usart.o(.text)
+    .text                                    0x08002a10   Section        0  bsp_systick.o(.text)
+    SysTick_Config                           0x08002a11   Thumb Code    76  bsp_systick.o(.text)
+    .text                                    0x08002b44   Section        0  wrflash.o(.text)
+    .text                                    0x08002bc8   Section        0  esp8266.o(.text)
+    .text                                    0x08002e5c   Section        0  wifiusart..o(.text)
+    NVIC_Configuration                       0x08002e5d   Thumb Code    40  wifiusart..o(.text)
+    .text                                    0x08002fb0   Section        0  bsp_timbase.o(.text)
+    ADVANCE_TIM_GPIO_Config                  0x08002fb1   Thumb Code    40  bsp_timbase.o(.text)
+    CONTROL_DRV8825_GPIO_Config              0x08002fd9   Thumb Code   208  bsp_timbase.o(.text)
+    BASIC_TIM_NVIC_Config                    0x080030a9   Thumb Code    42  bsp_timbase.o(.text)
+    BASIC_TIM_Mode_Config                    0x080030d3   Thumb Code   158  bsp_timbase.o(.text)
+    .text                                    0x080031fc   Section        0  bsp_timecover.o(.text)
+    CONTROL2_DRV8825_GPIO_Config             0x080031fd   Thumb Code   162  bsp_timecover.o(.text)
+    ADVANCE_TIM_GPIO_Config                  0x0800329f   Thumb Code    38  bsp_timecover.o(.text)
+    COVER_TIM_NVIC_Config                    0x080032c5   Thumb Code    42  bsp_timecover.o(.text)
+    COVER_TIM_Mode_Config                    0x080032ef   Thumb Code   156  bsp_timecover.o(.text)
+    .text                                    0x0800342c   Section        0  strstr.o(.text)
+    .text                                    0x08003450   Section        0  atoi.o(.text)
+    .text                                    0x0800346a   Section        0  uidiv.o(.text)
+    .text                                    0x08003496   Section        0  strtol.o(.text)
+    .text                                    0x08003508   Section       36  init.o(.text)
+    .text                                    0x0800352c   Section        0  ctype_o.o(.text)
+    .text                                    0x08003534   Section        0  _strtoul.o(.text)
+    .text                                    0x080035d2   Section        0  _chval.o(.text)
+    i.__0printf$3                            0x080035f0   Section        0  printf3.o(i.__0printf$3)
+    i.__0sprintf$3                           0x08003610   Section        0  printf3.o(i.__0sprintf$3)
+    i.__aeabi_errno_addr                     0x08003638   Section        0  errno.o(i.__aeabi_errno_addr)
+    i.__scatterload_copy                     0x08003640   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x0800364e   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x08003650   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i._printf_core                           0x08003660   Section        0  printf3.o(i._printf_core)
+    _printf_core                             0x08003661   Thumb Code   436  printf3.o(i._printf_core)
+    i._sputc                                 0x08003818   Section        0  printf3.o(i._sputc)
+    _sputc                                   0x08003819   Thumb Code    10  printf3.o(i._sputc)
+    .constdata                               0x08003822   Section      129  ctype_o.o(.constdata)
+    .constdata                               0x080038a4   Section        4  ctype_o.o(.constdata)
+    table                                    0x080038a4   Data           4  ctype_o.o(.constdata)
     .data                                    0x20000000   Section       20  system_stm32f10x.o(.data)
     .data                                    0x20000014   Section       20  stm32f10x_rcc.o(.data)
     APBAHBPrescTable                         0x20000014   Data          16  stm32f10x_rcc.o(.data)
     ADCPrescTable                            0x20000024   Data           4  stm32f10x_rcc.o(.data)
-    .data                                    0x20000028   Section        4  main.o(.data)
-    .data                                    0x2000002c   Section       10  stm32f10x_it.o(.data)
-    .data                                    0x20000036   Section        1  bsp_usart.o(.data)
-    .data                                    0x20000038   Section        4  bsp_systick.o(.data)
-    TimingDelay                              0x20000038   Data           4  bsp_systick.o(.data)
-    .data                                    0x2000003c   Section      100  esp8266.o(.data)
-    .data                                    0x200000a0   Section        1  wifiusart..o(.data)
-    .data                                    0x200000a4   Section        4  stdout.o(.data)
-    .data                                    0x200000a8   Section        4  errno.o(.data)
-    _errno                                   0x200000a8   Data           4  errno.o(.data)
-    .bss                                     0x200000ac   Section      200  main.o(.bss)
-    .bss                                     0x20000174   Section      256  bsp_usart.o(.bss)
-    .bss                                     0x20000274   Section      172  esp8266.o(.bss)
-    .bss                                     0x20000320   Section     1024  wifiusart..o(.bss)
-    STACK                                    0x20000720   Section     1024  startup_stm32f10x_hd.o(STACK)
+    .data                                    0x20000028   Section       10  main.o(.data)
+    .data                                    0x20000034   Section       10  stm32f10x_it.o(.data)
+    .data                                    0x2000003e   Section        1  bsp_usart.o(.data)
+    .data                                    0x20000040   Section        4  bsp_systick.o(.data)
+    TimingDelay                              0x20000040   Data           4  bsp_systick.o(.data)
+    .data                                    0x20000044   Section      100  esp8266.o(.data)
+    .data                                    0x200000a8   Section        1  wifiusart..o(.data)
+    .data                                    0x200000ac   Section        4  stdout.o(.data)
+    .data                                    0x200000b0   Section        4  errno.o(.data)
+    _errno                                   0x200000b0   Data           4  errno.o(.data)
+    .bss                                     0x200000b4   Section      200  main.o(.bss)
+    .bss                                     0x2000017c   Section      256  bsp_usart.o(.bss)
+    .bss                                     0x2000027c   Section      172  esp8266.o(.bss)
+    .bss                                     0x20000328   Section     1024  wifiusart..o(.bss)
+    STACK                                    0x20000728   Section     1024  startup_stm32f10x_hd.o(STACK)
 
     Global Symbols
 
@@ -918,102 +919,103 @@ Image Symbol Table
     USART_ClearFlag                          0x0800226b   Thumb Code    18  stm32f10x_usart.o(.text)
     USART_GetITStatus                        0x0800227d   Thumb Code    84  stm32f10x_usart.o(.text)
     USART_ClearITPendingBit                  0x080022d1   Thumb Code    52  stm32f10x_usart.o(.text)
-    main                                     0x08002305   Thumb Code   716  main.o(.text)
-    NMI_Handler                              0x0800263d   Thumb Code     2  stm32f10x_it.o(.text)
-    HardFault_Handler                        0x0800263f   Thumb Code     4  stm32f10x_it.o(.text)
-    MemManage_Handler                        0x08002643   Thumb Code     4  stm32f10x_it.o(.text)
-    BusFault_Handler                         0x08002647   Thumb Code     4  stm32f10x_it.o(.text)
-    UsageFault_Handler                       0x0800264b   Thumb Code     4  stm32f10x_it.o(.text)
-    SVC_Handler                              0x0800264f   Thumb Code     2  stm32f10x_it.o(.text)
-    DebugMon_Handler                         0x08002651   Thumb Code     2  stm32f10x_it.o(.text)
-    PendSV_Handler                           0x08002653   Thumb Code     2  stm32f10x_it.o(.text)
-    SysTick_Handler                          0x08002655   Thumb Code     8  stm32f10x_it.o(.text)
-    USART1_IRQHandler                        0x0800265d   Thumb Code    84  stm32f10x_it.o(.text)
-    USART3_IRQHandler                        0x080026b1   Thumb Code    88  stm32f10x_it.o(.text)
-    TIM1_UP_IRQHandler                       0x08002709   Thumb Code   140  stm32f10x_it.o(.text)
-    TIM2_IRQHandler                          0x08002795   Thumb Code    32  stm32f10x_it.o(.text)
-    USART_Config                             0x08002811   Thumb Code   136  bsp_usart.o(.text)
-    Usart_SendByte                           0x08002899   Thumb Code    30  bsp_usart.o(.text)
-    Usart_SendArray                          0x080028b7   Thumb Code    48  bsp_usart.o(.text)
-    Usart_SendString                         0x080028e7   Thumb Code    42  bsp_usart.o(.text)
-    Usart_SendHalfWord                       0x08002911   Thumb Code    60  bsp_usart.o(.text)
-    fputc                                    0x0800294d   Thumb Code    32  bsp_usart.o(.text)
-    fgetc                                    0x0800296d   Thumb Code    26  bsp_usart.o(.text)
-    CmdUsart_FlushRxBuffer                   0x08002987   Thumb Code    16  bsp_usart.o(.text)
-    SysTick_Init                             0x080029f5   Thumb Code    26  bsp_systick.o(.text)
-    Delay_us                                 0x08002a0f   Thumb Code    36  bsp_systick.o(.text)
-    TimingDelay_Decrement                    0x08002a33   Thumb Code    18  bsp_systick.o(.text)
-    SysTick_Delay_Us                         0x08002a45   Thumb Code    64  bsp_systick.o(.text)
-    SysTick_Delay_Ms                         0x08002a85   Thumb Code    66  bsp_systick.o(.text)
-    Read_Flash                               0x08002add   Thumb Code    28  wrflash.o(.text)
-    Write_Flash                              0x08002af9   Thumb Code    98  wrflash.o(.text)
-    ESP8266_Set                              0x08002b61   Thumb Code    88  esp8266.o(.text)
-    SetIP                                    0x08002bb9   Thumb Code    52  esp8266.o(.text)
-    SetWifiName                              0x08002bed   Thumb Code    28  esp8266.o(.text)
-    SetWifiCode                              0x08002c09   Thumb Code    30  esp8266.o(.text)
-    SetNameCode                              0x08002c27   Thumb Code    30  esp8266.o(.text)
-    CmdString                                0x08002c45   Thumb Code    40  esp8266.o(.text)
-    ESP8266_Rst                              0x08002c6d   Thumb Code    30  esp8266.o(.text)
-    SetWifiConnect                           0x08002c8b   Thumb Code    54  esp8266.o(.text)
-    ESP8266IO                                0x08002cc1   Thumb Code    76  esp8266.o(.text)
-    WifiUSART_Config                         0x08002e1d   Thumb Code   136  wifiusart..o(.text)
-    WifiUsart_SendByte                       0x08002ea5   Thumb Code    30  wifiusart..o(.text)
-    WifiUsart_SendString                     0x08002ec3   Thumb Code    42  wifiusart..o(.text)
-    WifiUsart_SendHalfWord                   0x08002eed   Thumb Code    60  wifiusart..o(.text)
-    Wifiuart_FlushRxBuffer                   0x08002f29   Thumb Code    16  wifiusart..o(.text)
-    BASIC_TIM_Init                           0x08003109   Thumb Code    20  bsp_timbase.o(.text)
-    ControlMotor                             0x0800311d   Thumb Code    62  bsp_timbase.o(.text)
-    SetSpeedMoter                            0x0800315b   Thumb Code    22  bsp_timbase.o(.text)
-    SetSpeed                                 0x08003171   Thumb Code    22  bsp_timbase.o(.text)
-    Cover_TIM_Init                           0x08003323   Thumb Code    20  bsp_timecover.o(.text)
-    ControlCover                             0x08003337   Thumb Code    66  bsp_timecover.o(.text)
-    SetSpeedCoverPulse                       0x08003379   Thumb Code    16  bsp_timecover.o(.text)
-    SetSpeedCoverMoter                       0x08003389   Thumb Code    26  bsp_timecover.o(.text)
-    SetSpeedCover                            0x080033a3   Thumb Code    22  bsp_timecover.o(.text)
-    strstr                                   0x080033c5   Thumb Code    36  strstr.o(.text)
-    atoi                                     0x080033e9   Thumb Code    26  atoi.o(.text)
-    __aeabi_uidiv                            0x08003403   Thumb Code     0  uidiv.o(.text)
-    __aeabi_uidivmod                         0x08003403   Thumb Code    44  uidiv.o(.text)
-    strtol                                   0x0800342f   Thumb Code   112  strtol.o(.text)
-    __scatterload                            0x080034a1   Thumb Code    28  init.o(.text)
-    __scatterload_rt2                        0x080034a1   Thumb Code     0  init.o(.text)
-    __rt_ctype_table                         0x080034c5   Thumb Code     4  ctype_o.o(.text)
-    _strtoul                                 0x080034cd   Thumb Code   158  _strtoul.o(.text)
-    _chval                                   0x0800356b   Thumb Code    28  _chval.o(.text)
-    __0printf$3                              0x08003589   Thumb Code    22  printf3.o(i.__0printf$3)
-    __1printf$3                              0x08003589   Thumb Code     0  printf3.o(i.__0printf$3)
-    __2printf                                0x08003589   Thumb Code     0  printf3.o(i.__0printf$3)
-    __0sprintf$3                             0x080035a9   Thumb Code    34  printf3.o(i.__0sprintf$3)
-    __1sprintf$3                             0x080035a9   Thumb Code     0  printf3.o(i.__0sprintf$3)
-    __2sprintf                               0x080035a9   Thumb Code     0  printf3.o(i.__0sprintf$3)
-    __aeabi_errno_addr                       0x080035d1   Thumb Code     4  errno.o(i.__aeabi_errno_addr)
-    __rt_errno_addr                          0x080035d1   Thumb Code     0  errno.o(i.__aeabi_errno_addr)
-    __scatterload_copy                       0x080035d9   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x080035e7   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x080035e9   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    __ctype_table                            0x080037ba   Data         129  ctype_o.o(.constdata)
-    Region$$Table$$Base                      0x08003840   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08003860   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x08002305   Thumb Code   758  main.o(.text)
+    NMI_Handler                              0x08002691   Thumb Code     2  stm32f10x_it.o(.text)
+    HardFault_Handler                        0x08002693   Thumb Code     4  stm32f10x_it.o(.text)
+    MemManage_Handler                        0x08002697   Thumb Code     4  stm32f10x_it.o(.text)
+    BusFault_Handler                         0x0800269b   Thumb Code     4  stm32f10x_it.o(.text)
+    UsageFault_Handler                       0x0800269f   Thumb Code     4  stm32f10x_it.o(.text)
+    SVC_Handler                              0x080026a3   Thumb Code     2  stm32f10x_it.o(.text)
+    DebugMon_Handler                         0x080026a5   Thumb Code     2  stm32f10x_it.o(.text)
+    PendSV_Handler                           0x080026a7   Thumb Code     2  stm32f10x_it.o(.text)
+    SysTick_Handler                          0x080026a9   Thumb Code     8  stm32f10x_it.o(.text)
+    USART1_IRQHandler                        0x080026b1   Thumb Code    84  stm32f10x_it.o(.text)
+    USART3_IRQHandler                        0x08002705   Thumb Code    88  stm32f10x_it.o(.text)
+    TIM1_UP_IRQHandler                       0x0800275d   Thumb Code   154  stm32f10x_it.o(.text)
+    TIM2_IRQHandler                          0x080027f7   Thumb Code    32  stm32f10x_it.o(.text)
+    USART_Config                             0x08002879   Thumb Code   136  bsp_usart.o(.text)
+    Usart_SendByte                           0x08002901   Thumb Code    30  bsp_usart.o(.text)
+    Usart_SendArray                          0x0800291f   Thumb Code    48  bsp_usart.o(.text)
+    Usart_SendString                         0x0800294f   Thumb Code    42  bsp_usart.o(.text)
+    Usart_SendHalfWord                       0x08002979   Thumb Code    60  bsp_usart.o(.text)
+    fputc                                    0x080029b5   Thumb Code    32  bsp_usart.o(.text)
+    fgetc                                    0x080029d5   Thumb Code    26  bsp_usart.o(.text)
+    CmdUsart_FlushRxBuffer                   0x080029ef   Thumb Code    16  bsp_usart.o(.text)
+    SysTick_Init                             0x08002a5d   Thumb Code    26  bsp_systick.o(.text)
+    Delay_us                                 0x08002a77   Thumb Code    36  bsp_systick.o(.text)
+    TimingDelay_Decrement                    0x08002a9b   Thumb Code    18  bsp_systick.o(.text)
+    SysTick_Delay_Us                         0x08002aad   Thumb Code    64  bsp_systick.o(.text)
+    SysTick_Delay_Ms                         0x08002aed   Thumb Code    66  bsp_systick.o(.text)
+    Read_Flash                               0x08002b45   Thumb Code    28  wrflash.o(.text)
+    Write_Flash                              0x08002b61   Thumb Code    98  wrflash.o(.text)
+    ESP8266_Set                              0x08002bc9   Thumb Code    88  esp8266.o(.text)
+    SetIP                                    0x08002c21   Thumb Code    52  esp8266.o(.text)
+    SetWifiName                              0x08002c55   Thumb Code    28  esp8266.o(.text)
+    SetWifiCode                              0x08002c71   Thumb Code    30  esp8266.o(.text)
+    SetNameCode                              0x08002c8f   Thumb Code    30  esp8266.o(.text)
+    CmdString                                0x08002cad   Thumb Code    40  esp8266.o(.text)
+    ESP8266_Rst                              0x08002cd5   Thumb Code    30  esp8266.o(.text)
+    SetWifiConnect                           0x08002cf3   Thumb Code    54  esp8266.o(.text)
+    ESP8266IO                                0x08002d29   Thumb Code    76  esp8266.o(.text)
+    WifiUSART_Config                         0x08002e85   Thumb Code   136  wifiusart..o(.text)
+    WifiUsart_SendByte                       0x08002f0d   Thumb Code    30  wifiusart..o(.text)
+    WifiUsart_SendString                     0x08002f2b   Thumb Code    42  wifiusart..o(.text)
+    WifiUsart_SendHalfWord                   0x08002f55   Thumb Code    60  wifiusart..o(.text)
+    Wifiuart_FlushRxBuffer                   0x08002f91   Thumb Code    16  wifiusart..o(.text)
+    BASIC_TIM_Init                           0x08003171   Thumb Code    20  bsp_timbase.o(.text)
+    ControlMotor                             0x08003185   Thumb Code    62  bsp_timbase.o(.text)
+    SetSpeedMoter                            0x080031c3   Thumb Code    22  bsp_timbase.o(.text)
+    SetSpeed                                 0x080031d9   Thumb Code    22  bsp_timbase.o(.text)
+    Cover_TIM_Init                           0x0800338b   Thumb Code    20  bsp_timecover.o(.text)
+    ControlCover                             0x0800339f   Thumb Code    66  bsp_timecover.o(.text)
+    SetSpeedCoverPulse                       0x080033e1   Thumb Code    16  bsp_timecover.o(.text)
+    SetSpeedCoverMoter                       0x080033f1   Thumb Code    26  bsp_timecover.o(.text)
+    SetSpeedCover                            0x0800340b   Thumb Code    22  bsp_timecover.o(.text)
+    strstr                                   0x0800342d   Thumb Code    36  strstr.o(.text)
+    atoi                                     0x08003451   Thumb Code    26  atoi.o(.text)
+    __aeabi_uidiv                            0x0800346b   Thumb Code     0  uidiv.o(.text)
+    __aeabi_uidivmod                         0x0800346b   Thumb Code    44  uidiv.o(.text)
+    strtol                                   0x08003497   Thumb Code   112  strtol.o(.text)
+    __scatterload                            0x08003509   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x08003509   Thumb Code     0  init.o(.text)
+    __rt_ctype_table                         0x0800352d   Thumb Code     4  ctype_o.o(.text)
+    _strtoul                                 0x08003535   Thumb Code   158  _strtoul.o(.text)
+    _chval                                   0x080035d3   Thumb Code    28  _chval.o(.text)
+    __0printf$3                              0x080035f1   Thumb Code    22  printf3.o(i.__0printf$3)
+    __1printf$3                              0x080035f1   Thumb Code     0  printf3.o(i.__0printf$3)
+    __2printf                                0x080035f1   Thumb Code     0  printf3.o(i.__0printf$3)
+    __0sprintf$3                             0x08003611   Thumb Code    34  printf3.o(i.__0sprintf$3)
+    __1sprintf$3                             0x08003611   Thumb Code     0  printf3.o(i.__0sprintf$3)
+    __2sprintf                               0x08003611   Thumb Code     0  printf3.o(i.__0sprintf$3)
+    __aeabi_errno_addr                       0x08003639   Thumb Code     4  errno.o(i.__aeabi_errno_addr)
+    __rt_errno_addr                          0x08003639   Thumb Code     0  errno.o(i.__aeabi_errno_addr)
+    __scatterload_copy                       0x08003641   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x0800364f   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x08003651   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    __ctype_table                            0x08003822   Data         129  ctype_o.o(.constdata)
+    Region$$Table$$Base                      0x080038a8   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x080038c8   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_stm32f10x.o(.data)
     AHBPrescTable                            0x20000004   Data          16  system_stm32f10x.o(.data)
     uSetSpeed                                0x20000028   Data           2  main.o(.data)
-    AcFlag                                   0x2000002a   Data           1  main.o(.data)
-    DeFlag                                   0x2000002b   Data           1  main.o(.data)
-    bFlagRun                                 0x2000002c   Data           1  stm32f10x_it.o(.data)
-    bRunMotor                                0x2000002d   Data           1  stm32f10x_it.o(.data)
-    uCountStep                               0x20000030   Data           4  stm32f10x_it.o(.data)
-    uCountStep1                              0x20000034   Data           2  stm32f10x_it.o(.data)
-    CmdUART_RxPtr                            0x20000036   Data           1  bsp_usart.o(.data)
-    CmdNameCode                              0x2000003c   Data         100  esp8266.o(.data)
-    WIFIUART_RxPtr                           0x200000a0   Data           1  wifiusart..o(.data)
-    __stdout                                 0x200000a4   Data           4  stdout.o(.data)
-    TempCount                                0x200000ac   Data         100  main.o(.bss)
-    TempCount1                               0x20000110   Data         100  main.o(.bss)
-    CmdUART_RxBuffer                         0x20000174   Data         256  bsp_usart.o(.bss)
-    UD                                       0x20000274   Data         120  esp8266.o(.bss)
-    ipstr                                    0x200002ec   Data          52  esp8266.o(.bss)
-    WIFIUART_RxBuffer                        0x20000320   Data        1024  wifiusart..o(.bss)
-    __initial_sp                             0x20000b20   Data           0  startup_stm32f10x_hd.o(STACK)
+    uStepCount                               0x2000002c   Data           4  main.o(.data)
+    AcFlag                                   0x20000030   Data           1  main.o(.data)
+    DeFlag                                   0x20000031   Data           1  main.o(.data)
+    bFlagRun                                 0x20000034   Data           1  stm32f10x_it.o(.data)
+    bRunMotor                                0x20000035   Data           1  stm32f10x_it.o(.data)
+    uCountStep                               0x20000038   Data           4  stm32f10x_it.o(.data)
+    uCountStep1                              0x2000003c   Data           2  stm32f10x_it.o(.data)
+    CmdUART_RxPtr                            0x2000003e   Data           1  bsp_usart.o(.data)
+    CmdNameCode                              0x20000044   Data         100  esp8266.o(.data)
+    WIFIUART_RxPtr                           0x200000a8   Data           1  wifiusart..o(.data)
+    __stdout                                 0x200000ac   Data           4  stdout.o(.data)
+    TempCount                                0x200000b4   Data         100  main.o(.bss)
+    TempCount1                               0x20000118   Data         100  main.o(.bss)
+    CmdUART_RxBuffer                         0x2000017c   Data         256  bsp_usart.o(.bss)
+    UD                                       0x2000027c   Data         120  esp8266.o(.bss)
+    ipstr                                    0x200002f4   Data          52  esp8266.o(.bss)
+    WIFIUART_RxBuffer                        0x20000328   Data        1024  wifiusart..o(.bss)
+    __initial_sp                             0x20000b28   Data           0  startup_stm32f10x_hd.o(STACK)
 
 
 
@@ -1023,9 +1025,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000131
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000390c, Max: 0x00010000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000397c, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00003860, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x000038c8, Max: 0x00010000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1048,61 +1050,62 @@ Memory Map of the image
     0x080010e0   0x00000e1a   Code   RO          367    .text               stm32f10x_tim.o
     0x08001efa   0x00000002   PAD
     0x08001efc   0x00000408   Code   RO          379    .text               stm32f10x_usart.o
-    0x08002304   0x00000338   Code   RO          403    .text               main.o
-    0x0800263c   0x000001ac   Code   RO          453    .text               stm32f10x_it.o
-    0x080027e8   0x000001c0   Code   RO          472    .text               bsp_usart.o
-    0x080029a8   0x00000134   Code   RO          491    .text               bsp_systick.o
-    0x08002adc   0x00000084   Code   RO          509    .text               wrflash.o
-    0x08002b60   0x00000294   Code   RO          524    .text               esp8266.o
-    0x08002df4   0x00000154   Code   RO          543    .text               wifiusart..o
-    0x08002f48   0x0000024c   Code   RO          562    .text               bsp_timbase.o
-    0x08003194   0x00000230   Code   RO          574    .text               bsp_timecover.o
-    0x080033c4   0x00000024   Code   RO          589    .text               mc_w.l(strstr.o)
-    0x080033e8   0x0000001a   Code   RO          852    .text               mc_w.l(atoi.o)
-    0x08003402   0x0000002c   Code   RO          869    .text               mc_w.l(uidiv.o)
-    0x0800342e   0x00000070   Code   RO          880    .text               mc_w.l(strtol.o)
-    0x0800349e   0x00000002   PAD
-    0x080034a0   0x00000024   Code   RO          893    .text               mc_w.l(init.o)
-    0x080034c4   0x00000008   Code   RO          901    .text               mc_w.l(ctype_o.o)
-    0x080034cc   0x0000009e   Code   RO          929    .text               mc_w.l(_strtoul.o)
-    0x0800356a   0x0000001c   Code   RO          933    .text               mc_w.l(_chval.o)
-    0x08003586   0x00000002   PAD
-    0x08003588   0x00000020   Code   RO          680    i.__0printf$3       mc_w.l(printf3.o)
-    0x080035a8   0x00000028   Code   RO          682    i.__0sprintf$3      mc_w.l(printf3.o)
-    0x080035d0   0x00000008   Code   RO          873    i.__aeabi_errno_addr  mc_w.l(errno.o)
-    0x080035d8   0x0000000e   Code   RO          937    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x080035e6   0x00000002   Code   RO          938    i.__scatterload_null  mc_w.l(handlers.o)
-    0x080035e8   0x0000000e   Code   RO          939    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x080035f6   0x00000002   PAD
-    0x080035f8   0x000001b8   Code   RO          687    i._printf_core      mc_w.l(printf3.o)
-    0x080037b0   0x0000000a   Code   RO          689    i._sputc            mc_w.l(printf3.o)
-    0x080037ba   0x00000081   Data   RO          902    .constdata          mc_w.l(ctype_o.o)
-    0x0800383b   0x00000001   PAD
-    0x0800383c   0x00000004   Data   RO          903    .constdata          mc_w.l(ctype_o.o)
-    0x08003840   0x00000020   Data   RO          935    Region$$Table       anon$$obj.o
+    0x08002304   0x0000038c   Code   RO          403    .text               main.o
+    0x08002690   0x000001c0   Code   RO          453    .text               stm32f10x_it.o
+    0x08002850   0x000001c0   Code   RO          472    .text               bsp_usart.o
+    0x08002a10   0x00000134   Code   RO          491    .text               bsp_systick.o
+    0x08002b44   0x00000084   Code   RO          509    .text               wrflash.o
+    0x08002bc8   0x00000294   Code   RO          524    .text               esp8266.o
+    0x08002e5c   0x00000154   Code   RO          543    .text               wifiusart..o
+    0x08002fb0   0x0000024c   Code   RO          562    .text               bsp_timbase.o
+    0x080031fc   0x00000230   Code   RO          574    .text               bsp_timecover.o
+    0x0800342c   0x00000024   Code   RO          589    .text               mc_w.l(strstr.o)
+    0x08003450   0x0000001a   Code   RO          852    .text               mc_w.l(atoi.o)
+    0x0800346a   0x0000002c   Code   RO          869    .text               mc_w.l(uidiv.o)
+    0x08003496   0x00000070   Code   RO          880    .text               mc_w.l(strtol.o)
+    0x08003506   0x00000002   PAD
+    0x08003508   0x00000024   Code   RO          893    .text               mc_w.l(init.o)
+    0x0800352c   0x00000008   Code   RO          901    .text               mc_w.l(ctype_o.o)
+    0x08003534   0x0000009e   Code   RO          929    .text               mc_w.l(_strtoul.o)
+    0x080035d2   0x0000001c   Code   RO          933    .text               mc_w.l(_chval.o)
+    0x080035ee   0x00000002   PAD
+    0x080035f0   0x00000020   Code   RO          680    i.__0printf$3       mc_w.l(printf3.o)
+    0x08003610   0x00000028   Code   RO          682    i.__0sprintf$3      mc_w.l(printf3.o)
+    0x08003638   0x00000008   Code   RO          873    i.__aeabi_errno_addr  mc_w.l(errno.o)
+    0x08003640   0x0000000e   Code   RO          937    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x0800364e   0x00000002   Code   RO          938    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08003650   0x0000000e   Code   RO          939    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x0800365e   0x00000002   PAD
+    0x08003660   0x000001b8   Code   RO          687    i._printf_core      mc_w.l(printf3.o)
+    0x08003818   0x0000000a   Code   RO          689    i._sputc            mc_w.l(printf3.o)
+    0x08003822   0x00000081   Data   RO          902    .constdata          mc_w.l(ctype_o.o)
+    0x080038a3   0x00000001   PAD
+    0x080038a4   0x00000004   Data   RO          903    .constdata          mc_w.l(ctype_o.o)
+    0x080038a8   0x00000020   Data   RO          935    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00000b20, Max: 0x00005000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00000b28, Max: 0x00005000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000000   0x00000014   Data   RW           25    .data               system_stm32f10x.o
     0x20000014   0x00000014   Data   RW          318    .data               stm32f10x_rcc.o
-    0x20000028   0x00000004   Data   RW          405    .data               main.o
-    0x2000002c   0x0000000a   Data   RW          454    .data               stm32f10x_it.o
-    0x20000036   0x00000001   Data   RW          474    .data               bsp_usart.o
-    0x20000037   0x00000001   PAD
-    0x20000038   0x00000004   Data   RW          492    .data               bsp_systick.o
-    0x2000003c   0x00000064   Data   RW          526    .data               esp8266.o
-    0x200000a0   0x00000001   Data   RW          545    .data               wifiusart..o
-    0x200000a1   0x00000003   PAD
-    0x200000a4   0x00000004   Data   RW          868    .data               mc_w.l(stdout.o)
-    0x200000a8   0x00000004   Data   RW          876    .data               mc_w.l(errno.o)
-    0x200000ac   0x000000c8   Zero   RW          404    .bss                main.o
-    0x20000174   0x00000100   Zero   RW          473    .bss                bsp_usart.o
-    0x20000274   0x000000ac   Zero   RW          525    .bss                esp8266.o
-    0x20000320   0x00000400   Zero   RW          544    .bss                wifiusart..o
-    0x20000720   0x00000400   Zero   RW            1    STACK               startup_stm32f10x_hd.o
+    0x20000028   0x0000000a   Data   RW          405    .data               main.o
+    0x20000032   0x00000002   PAD
+    0x20000034   0x0000000a   Data   RW          454    .data               stm32f10x_it.o
+    0x2000003e   0x00000001   Data   RW          474    .data               bsp_usart.o
+    0x2000003f   0x00000001   PAD
+    0x20000040   0x00000004   Data   RW          492    .data               bsp_systick.o
+    0x20000044   0x00000064   Data   RW          526    .data               esp8266.o
+    0x200000a8   0x00000001   Data   RW          545    .data               wifiusart..o
+    0x200000a9   0x00000003   PAD
+    0x200000ac   0x00000004   Data   RW          868    .data               mc_w.l(stdout.o)
+    0x200000b0   0x00000004   Data   RW          876    .data               mc_w.l(errno.o)
+    0x200000b4   0x000000c8   Zero   RW          404    .bss                main.o
+    0x2000017c   0x00000100   Zero   RW          473    .bss                bsp_usart.o
+    0x2000027c   0x000000ac   Zero   RW          525    .bss                esp8266.o
+    0x20000328   0x00000400   Zero   RW          544    .bss                wifiusart..o
+    0x20000728   0x00000400   Zero   RW            1    STACK               startup_stm32f10x_hd.o
 
 
 ==============================================================================
@@ -1118,12 +1121,12 @@ Image component sizes
        448         18          0          1        256       3014   bsp_usart.o
          0          0          0          0          0       4272   core_cm3.o
        660        232          0        100        172       3534   esp8266.o
-       824        108          0          4        200       3286   main.o
+       908        150          0         10        200       3345   main.o
        220         22          0          0          0       1821   misc.o
         36          8        304          0       1024        864   startup_stm32f10x_hd.o
       1468         34          0          0          0       8050   stm32f10x_flash.o
        860         38          0          0          0       5665   stm32f10x_gpio.o
-       428         52          0         10          0       2433   stm32f10x_it.o
+       448         58          0         10          0       2433   stm32f10x_it.o
        932         36          0         20          0       8844   stm32f10x_rcc.o
       3610         88          0          0          0      22152   stm32f10x_tim.o
       1032         22          0          0          0       8392   stm32f10x_usart.o
@@ -1132,9 +1135,9 @@ Image component sizes
        132          6          0          0          0       1321   wrflash.o
 
     ----------------------------------------------------------------------
-     12928        766        336        164       2676     352397   Object Totals
+     13032        814        336        172       2676     352456   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         2          0          0          4          0          0   (incl. Padding)
+         2          0          0          6          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1181,15 +1184,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     13962        810        470        172       2676     351653   Grand Totals
-     13962        810        470        172       2676     351653   ELF Image Totals
-     13962        810        470        172          0          0   ROM Totals
+     14066        858        470        180       2676     351712   Grand Totals
+     14066        858        470        180       2676     351712   ELF Image Totals
+     14066        858        470        180          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                14432 (  14.09kB)
-    Total RW  Size (RW Data + ZI Data)              2848 (   2.78kB)
-    Total ROM Size (Code + RO Data + RW Data)      14604 (  14.26kB)
+    Total RO  Size (Code + RO Data)                14536 (  14.20kB)
+    Total RW  Size (RW Data + ZI Data)              2856 (   2.79kB)
+    Total ROM Size (Code + RO Data + RW Data)      14716 (  14.37kB)
 
 ==============================================================================
 

@@ -34,6 +34,7 @@
 extern bool bFlagRun;
 extern bool bRunMotor;
 u16 uSetSpeed;
+u32 uStepCount = 1;
 extern u16 uCountStep;
 extern u16 uCountStep1;
 bool AcFlag = false;
@@ -122,9 +123,15 @@ int main(void)
 						{
 						
 							uSetSpeed = atoi((char const *)CmdUART_RxBuffer+3);	
+							printf("uSetSpeed = %d\n", uSetSpeed);
 							SetSpeed(uSetSpeed);
 							SetSpeedCover(uSetSpeed);
 						
+						}
+						else if (CmdUART_RxBuffer[2] == 'S')
+						{
+							uStepCount = atoi((char const *)CmdUART_RxBuffer+3);
+							printf("uStepCount = %u\n", uStepCount);
 						}
 				  	}	
 				  	
