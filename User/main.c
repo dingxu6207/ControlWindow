@@ -202,7 +202,7 @@ int main(void)
 						GPIO_SetBits(DrDIR_GPIO_PORT, DrDIR_GPIO_PIN);
 					}
 					
-					else if(WIFIUART_RxBuffer[2] == 'C')
+					else if (WIFIUART_RxBuffer[2] == 'C')
 					{
 					  
 					    DeFlag = true;
@@ -212,7 +212,17 @@ int main(void)
 	          			GPIO_ResetBits(DIR_GPIO_PORT, DIR_GPIO_PIN);
 	          			GPIO_ResetBits(DrDIR_GPIO_PORT, DrDIR_GPIO_PIN);
 					}
-										
+					
+					else if (WIFIUART_RxBuffer[2] == 'V')
+					{
+							uSetSpeed = atoi((char const *)WIFIUART_RxBuffer+3);	
+							SetSpeed(uSetSpeed);
+							SetSpeedCover(uSetSpeed);
+					}
+					else if (WIFIUART_RxBuffer[2] == 'S')
+					{
+							uStepCount = atoi((char const *)WIFIUART_RxBuffer+3);	
+					}				
 						
 				}
 			
