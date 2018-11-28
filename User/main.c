@@ -22,7 +22,8 @@
 #include "ESP8266.h"
 #include "WifiUsart.h"
 #include "bsp_TiMbase.h" 
-#include "bsp_TimeCover.h" 
+#include "bsp_TimeCover.h"
+#include "bsp_usart_blt.h"
 
 #include <stdbool.h>
 #include <stdlib.h>
@@ -33,6 +34,7 @@
   */
 extern bool bFlagRun;
 extern bool bRunMotor;
+extern bool bUART2flag;
 u16 uSetSpeed;
 u32 uStepCount = 1;
 extern u16 uCountStep;
@@ -53,11 +55,13 @@ int main(void)
   Cover_TIM_Init();
 	
   WifiUSART_Config();
+
+  BLT_USART_Config();
 	
   ESP8266IO();
 
   bFlagRun = true;
-  sprintf((char*)CmdUART_RxBuffer, ":FY#");
+  //sprintf((char*)CmdUART_RxBuffer, ":FY#");
 		
   while(1)
 	{	
@@ -137,6 +141,22 @@ int main(void)
 				  	
 			bFlagRun = false;
 			CmdUsart_FlushRxBuffer();
+		}
+
+		if (bUART2flag == true)
+		{
+			printf("it is ok!\n");			
+			if (BLTUART_RxBuffer[0] == ':')			
+				if (BLTUART_RxBuffer[1] == 'F')
+				{
+					if (BLTUART_RxBuffer[2] == '+')
+					{
+						BLTUsart_SendString(USART2, "it is ok\n");
+					}
+				}
+			
+            clean_rebuff();
+            bUART2flag = false;			
 		}
 
         if (bRunMotor == true)	

@@ -31,6 +31,7 @@
 #include "WifiUsart.h"
 #include "bsp_TiMbase.h" 
 #include "bsp_TimeCover.h"
+#include "bsp_usart_blt.h"
 
 extern void TimingDelay_Decrement(void);
 
@@ -218,6 +219,33 @@ void DEBUG_USART3_IRQHandler(void)
 			bRunMotor = true;
 		}
 	}	 
+}
+
+//-------------------------------------------------------
+//´®¿Ú2ÊÕ·¢
+bool bUART2flag = false;
+void BLT_USART_IRQHandler( void )
+{
+	unsigned char data;
+	if(USART_GetITStatus(BLT_USARTx, USART_IT_RXNE)!= RESET)
+	{
+		data = USART_ReceiveData(BLT_USARTx);		
+		if (BLTUART_RxPtr < (BLTUART_RX_BUFFER_SIZE - 1))
+		{
+			BLTUART_RxBuffer[BLTUART_RxPtr] = data;
+            BLTUART_RxBuffer[BLTUART_RxPtr + 1]=0x00;
+            BLTUART_RxPtr++;
+		}
+		else
+		{
+			BLTUART_RxBuffer[BLTUART_RxPtr - 1] = data;
+		}
+	}
+
+	if (data == 35)
+	{
+		bUART2flag = true;
+	}
 }
 
 extern bool AcFlag;

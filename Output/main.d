@@ -36,5 +36,6 @@
 ..\..\output\main.o: ..\..\User\uart3\WifiUsart.h
 ..\..\output\main.o: ..\..\User\TimBase\bsp_TiMbase.h
 ..\..\output\main.o: ..\..\User\Contrlcover\bsp_TimeCover.h
+..\..\output\main.o: ..\..\User\uart2\bsp_usart_blt.h
 ..\..\output\main.o: d:\Keil_v5\ARM\ARMCC\bin\..\include\stdbool.h
 ..\..\output\main.o: d:\Keil_v5\ARM\ARMCC\bin\..\include\stdlib.h

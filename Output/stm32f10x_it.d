@@ -36,3 +36,4 @@
 ..\..\output\stm32f10x_it.o: ..\..\User\uart3\WifiUsart.h
 ..\..\output\stm32f10x_it.o: ..\..\User\TimBase\bsp_TiMbase.h
 ..\..\output\stm32f10x_it.o: ..\..\User\Contrlcover\bsp_TimeCover.h
+..\..\output\stm32f10x_it.o: ..\..\User\uart2\bsp_usart_blt.h
